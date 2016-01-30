@@ -59,7 +59,7 @@ public class SNZUIDelegate : UIResponder {
 
 }
 
-extension SKNode {
+public extension SKNode {
     var ignoreTouches: Bool {
         get {
             let result = self.userData?.valueForKey("SNZIgnoreTouches")

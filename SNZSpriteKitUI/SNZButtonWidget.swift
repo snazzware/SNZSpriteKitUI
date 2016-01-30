@@ -16,6 +16,7 @@ public class SNZButtonWidget : SNZWidget {
     public var color: UIColor = UIColor.blackColor()
     public var backgroundColor: UIColor = UIColor.whiteColor()
     public var cornerRadius:CGFloat = 4
+    public var labelSprite: SKLabelNode?
     
     public override init(parentNode: SKNode) {
         super.init(parentNode: parentNode)
@@ -29,17 +30,17 @@ public class SNZButtonWidget : SNZWidget {
         buttonSprite.fillColor = self.backgroundColor
         buttonSprite.position = self.position
     
-        let labelSprite = SKLabelNode(fontNamed: "Avenir-Black")
-        labelSprite.text = self.caption
-        labelSprite.fontColor = self.color
-        labelSprite.fontSize = 20
-        labelSprite.horizontalAlignmentMode = .Center
-        labelSprite.verticalAlignmentMode = .Center
-        labelSprite.position = CGPointMake(((self.size.width) / 2), ((self.size.height) / 2))
+        self.labelSprite = SKLabelNode(fontNamed: "Avenir-Black")
+        self.labelSprite!.text = self.caption
+        self.labelSprite!.fontColor = self.color
+        self.labelSprite!.fontSize = 20
+        self.labelSprite!.horizontalAlignmentMode = .Center
+        self.labelSprite!.verticalAlignmentMode = .Center
+        self.labelSprite!.position = CGPointMake(((self.size.width) / 2), ((self.size.height) / 2))
 
-        labelSprite.ignoreTouches = true
+        self.labelSprite!.ignoreTouches = true
         
-        buttonSprite.addChild(labelSprite)
+        buttonSprite.addChild(self.labelSprite!)
         
         self.sprite = buttonSprite
         
