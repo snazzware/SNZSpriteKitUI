@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		806CDC5B1C5C1E0100C10664 /* SNZSpriteKitUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 806CDC5A1C5C1E0100C10664 /* SNZSpriteKitUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		806CDC671C5C1E3400C10664 /* SNZButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */; };
+		806CDC681C5C1E3400C10664 /* SNZDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC631C5C1E3400C10664 /* SNZDialog.swift */; };
+		806CDC691C5C1E3400C10664 /* SNZLabelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC641C5C1E3400C10664 /* SNZLabelWidget.swift */; };
+		806CDC6A1C5C1E3400C10664 /* SNZUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC651C5C1E3400C10664 /* SNZUIDelegate.swift */; };
+		806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC661C5C1E3400C10664 /* SNZWidget.swift */; };
+		806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		806CDC571C5C1E0100C10664 /* SNZSpriteKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SNZSpriteKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806CDC5A1C5C1E0100C10664 /* SNZSpriteKitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNZSpriteKitUI.h; sourceTree = "<group>"; };
 		806CDC5C1C5C1E0100C10664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZButtonWidget.swift; sourceTree = "<group>"; };
+		806CDC631C5C1E3400C10664 /* SNZDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZDialog.swift; sourceTree = "<group>"; };
+		806CDC641C5C1E3400C10664 /* SNZLabelWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZLabelWidget.swift; sourceTree = "<group>"; };
+		806CDC651C5C1E3400C10664 /* SNZUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZUIDelegate.swift; sourceTree = "<group>"; };
+		806CDC661C5C1E3400C10664 /* SNZWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZWidget.swift; sourceTree = "<group>"; };
+		806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +58,13 @@
 		806CDC591C5C1E0100C10664 /* SNZSpriteKitUI */ = {
 			isa = PBXGroup;
 			children = (
+				806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */,
+				806CDC631C5C1E3400C10664 /* SNZDialog.swift */,
+				806CDC641C5C1E3400C10664 /* SNZLabelWidget.swift */,
+				806CDC651C5C1E3400C10664 /* SNZUIDelegate.swift */,
+				806CDC661C5C1E3400C10664 /* SNZWidget.swift */,
 				806CDC5A1C5C1E0100C10664 /* SNZSpriteKitUI.h */,
+				806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */,
 				806CDC5C1C5C1E0100C10664 /* Info.plist */,
 			);
 			path = SNZSpriteKitUI;
@@ -131,6 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806CDC691C5C1E3400C10664 /* SNZLabelWidget.swift in Sources */,
+				806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */,
+				806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */,
+				806CDC671C5C1E3400C10664 /* SNZButtonWidget.swift in Sources */,
+				806CDC6A1C5C1E3400C10664 /* SNZUIDelegate.swift in Sources */,
+				806CDC681C5C1E3400C10664 /* SNZDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +253,7 @@
 		806CDC601C5C1E0100C10664 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -239,12 +264,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.snazzware.SNZSpriteKitUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		806CDC611C5C1E0100C10664 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
