@@ -14,6 +14,7 @@
 		806CDC6A1C5C1E3400C10664 /* SNZUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC651C5C1E3400C10664 /* SNZUIDelegate.swift */; };
 		806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC661C5C1E3400C10664 /* SNZWidget.swift */; };
 		806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */; };
+		806CDC751C5D394500C10664 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 806CDC741C5D394500C10664 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		806CDC651C5C1E3400C10664 /* SNZUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZUIDelegate.swift; sourceTree = "<group>"; };
 		806CDC661C5C1E3400C10664 /* SNZWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZWidget.swift; sourceTree = "<group>"; };
 		806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZScene.swift; sourceTree = "<group>"; };
+		806CDC741C5D394500C10664 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		806CDC4D1C5C1E0100C10664 = {
 			isa = PBXGroup;
 			children = (
+				806CDC741C5D394500C10664 /* LICENSE */,
 				806CDC591C5C1E0100C10664 /* SNZSpriteKitUI */,
 				806CDC581C5C1E0100C10664 /* Products */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806CDC751C5D394500C10664 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
