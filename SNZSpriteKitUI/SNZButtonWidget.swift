@@ -48,7 +48,6 @@ public class SNZButtonWidget : SNZWidget {
         self.labelSprite!.fontSize = 20
         self.labelSprite!.horizontalAlignmentMode = .Center
         self.labelSprite!.verticalAlignmentMode = .Center
-        self.labelSprite!.hidden = self.hidden
 
         self.labelSprite!.ignoreTouches = true
         
@@ -65,6 +64,7 @@ public class SNZButtonWidget : SNZWidget {
         buttonSprite.strokeColor = self.strokeColor
         buttonSprite.lineWidth = 0
         buttonSprite.position = self.position
+        buttonSprite.hidden = self.hidden
     
         buttonSprite.addChild(self.labelSprite!)
         
