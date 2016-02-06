@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		806B00141C62660100CF4652 /* SNZCheckButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */; };
+		806B00291C65430500CF4652 /* SNZSpriteKitUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */; };
+		806B002B1C65465400CF4652 /* SNZSceneHeaderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */; };
 		806CDC5B1C5C1E0100C10664 /* SNZSpriteKitUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 806CDC5A1C5C1E0100C10664 /* SNZSpriteKitUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		806CDC671C5C1E3400C10664 /* SNZButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */; };
 		806CDC681C5C1E3400C10664 /* SNZDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC631C5C1E3400C10664 /* SNZDialog.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZCheckButtonWidget.swift; sourceTree = "<group>"; };
+		806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZSpriteKitUITheme.swift; sourceTree = "<group>"; };
+		806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZSceneHeaderWidget.swift; sourceTree = "<group>"; };
 		806CDC571C5C1E0100C10664 /* SNZSpriteKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SNZSpriteKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806CDC5A1C5C1E0100C10664 /* SNZSpriteKitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNZSpriteKitUI.h; sourceTree = "<group>"; };
 		806CDC5C1C5C1E0100C10664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +67,7 @@
 		806CDC591C5C1E0100C10664 /* SNZSpriteKitUI */ = {
 			isa = PBXGroup;
 			children = (
+				806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */,
 				806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */,
 				806CDC631C5C1E3400C10664 /* SNZDialog.swift */,
 				806CDC641C5C1E3400C10664 /* SNZLabelWidget.swift */,
@@ -69,6 +76,8 @@
 				806CDC5A1C5C1E0100C10664 /* SNZSpriteKitUI.h */,
 				806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */,
 				806CDC5C1C5C1E0100C10664 /* Info.plist */,
+				806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */,
+				806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */,
 			);
 			path = SNZSpriteKitUI;
 			sourceTree = "<group>";
@@ -155,10 +164,13 @@
 			files = (
 				806CDC691C5C1E3400C10664 /* SNZLabelWidget.swift in Sources */,
 				806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */,
+				806B00141C62660100CF4652 /* SNZCheckButtonWidget.swift in Sources */,
 				806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */,
+				806B002B1C65465400CF4652 /* SNZSceneHeaderWidget.swift in Sources */,
 				806CDC671C5C1E3400C10664 /* SNZButtonWidget.swift in Sources */,
 				806CDC6A1C5C1E3400C10664 /* SNZUIDelegate.swift in Sources */,
 				806CDC681C5C1E3400C10664 /* SNZDialog.swift in Sources */,
+				806B00291C65430500CF4652 /* SNZSpriteKitUITheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 				806CDC611C5C1E0100C10664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

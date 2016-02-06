@@ -10,37 +10,41 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class SNZLabelWidget : SNZWidget {
+public class SNZLabelWidget : SNZWidget {
 
-    var caption: String = "Untitled"
-    var color: UIColor = UIColor.blackColor()
-    var backgroundColor: UIColor = UIColor.whiteColor()
+    public var caption: String = "Untitled"
+    public var color: UIColor = SNZSpriteKitUITheme.instance.labelColor
+    public var backgroundColor: UIColor = SNZSpriteKitUITheme.instance.labelBackground
     
-    override init(parentNode: SKNode) {
-        super.init(parentNode: parentNode)
+    public var labelSprite: SKLabelNode?
+    
+    override public init() {
+        super.init()
         
         self.size = CGSizeMake(200, 48)
     }
     
-    override func show() {
-        let buttonRect = CGRectMake(0, 0, self.size.width, self.size.height)
-        let buttonSprite = SKShapeNode(rect: buttonRect)
-        buttonSprite.fillColor = self.backgroundColor
-        buttonSprite.position = CGPointMake(((self.parentNode?.frame.width)! / 2)*(-1) + self.position.x, ((self.parentNode?.frame.height)! / 2)*(-1) + self.position.y)
-        buttonSprite.ignoreTouches = true
+    override public func show() {
+        self.labelSprite = SKLabelNode(fontNamed: "Avenir-Black")
+        self.labelSprite!.text = self.caption
+        self.labelSprite!.fontColor = self.color
+        self.labelSprite!.fontSize = 20
+        self.labelSprite!.horizontalAlignmentMode = .Left
+        self.labelSprite!.verticalAlignmentMode = .Bottom
+        self.labelSprite!.position = CGPointMake(SNZSpriteKitUITheme.instance.uiInnerMargins.left, SNZSpriteKitUITheme.instance.uiInnerMargins.bottom)
+        self.labelSprite!.ignoreTouches = true
+        
+        // Automatically resize
+        let frameRect = CGRectMake(0, 0, self.labelSprite!.frame.size.width + SNZSpriteKitUITheme.instance.uiInnerMargins.horizontal, self.labelSprite!.frame.size.height + SNZSpriteKitUITheme.instance.uiInnerMargins.vertical)
+        
+        let frameSprite = SKShapeNode(rect: frameRect)
+        frameSprite.fillColor = self.backgroundColor
+        frameSprite.position = self.position
+        frameSprite.ignoreTouches = true
     
-        let labelSprite = SKLabelNode(fontNamed: "Avenir-Black")
-        labelSprite.text = self.caption
-        labelSprite.fontColor = self.color
-        labelSprite.fontSize = 20
-        labelSprite.horizontalAlignmentMode = .Center
-        labelSprite.verticalAlignmentMode = .Center
-        labelSprite.position = CGPointMake(((self.size.width) / 2), ((self.size.height) / 2))
-        labelSprite.ignoreTouches = true
+        frameSprite.addChild(self.labelSprite!)
         
-        buttonSprite.addChild(labelSprite)
-        
-        self.sprite = buttonSprite
+        self.sprite = frameSprite
         
         super.show()
     }    

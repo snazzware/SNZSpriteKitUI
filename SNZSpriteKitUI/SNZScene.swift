@@ -16,6 +16,9 @@ public class SNZScene : SKScene {
     
     public func addWidget(widget: SNZWidget) {
         self.widgets.append(widget)
+        if (widget.parentNode == nil) {
+            widget.parentNode = self
+        }
     }
     
     public func initWidgets() {
@@ -24,7 +27,19 @@ public class SNZScene : SKScene {
         }
     }
     
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    public func getWidgets(named: String) -> [SNZWidget] {
+        return self.widgets.filter({
+            $0.name == named
+        })
+    }
+    
+    public func updateWidgets() {
+        for widget in self.widgets {
+            widget.anchor()
+        }
+    }
+    
+    public func widgetTouchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) -> Bool {
         var handled = false
         
         for touch in touches {
@@ -63,13 +78,25 @@ public class SNZScene : SKScene {
                 self.focusedWidget = nil
             }
         }
+        
+        return handled
+    }
+    
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.widgetTouchesBegan(touches, withEvent: event)
     }
     
     override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.touchesBegan(touches, withEvent: event)
+        self.widgetTouchesMoved(touches, withEvent: event)
     }
     
-    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    public func widgetTouchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) -> Bool {
+        return self.widgetTouchesBegan(touches, withEvent: event)
+    }
+    
+    public func widgetTouchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) -> Bool {
+        var handled = false
+        
         if (self.focusedWidget != nil) {
             self.focusedWidget!.trigger("blur")
         
@@ -85,10 +112,18 @@ public class SNZScene : SKScene {
                 // is the sprite the same one we started touching in touchesBegan?
                 if (self.focusedWidget!.sprite == touchedNode) {
                     self.focusedWidget!.trigger("tap")
+                    
+                    handled = true
                 }
             }
             
             self.focusedWidget = nil
         }
+        
+        return handled
+    }
+    
+    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.widgetTouchesEnded(touches, withEvent: event)
     }
 }
