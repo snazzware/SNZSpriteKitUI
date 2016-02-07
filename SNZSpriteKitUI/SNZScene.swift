@@ -39,6 +39,18 @@ public class SNZScene : SKScene {
         }
     }
     
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.widgetTouchesBegan(touches, withEvent: event)
+    }
+    
+    override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.widgetTouchesMoved(touches, withEvent: event)
+    }
+    
+    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.widgetTouchesEnded(touches, withEvent: event)
+    }
+    
     public func widgetTouchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) -> Bool {
         var handled = false
         
@@ -60,14 +72,13 @@ public class SNZScene : SKScene {
                             widget.trigger("focus")
                             self.focusedWidget = widget
                         }
-                        
-                        handled = true
                     } else {
                         widget.trigger("focus")
                         self.focusedWidget = widget
-                        
-                        handled = true
                     }
+                    
+                    handled = true
+                    break
                 }
             }
         }
@@ -80,14 +91,6 @@ public class SNZScene : SKScene {
         }
         
         return handled
-    }
-    
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.widgetTouchesBegan(touches, withEvent: event)
-    }
-    
-    override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.widgetTouchesMoved(touches, withEvent: event)
     }
     
     public func widgetTouchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) -> Bool {
@@ -114,6 +117,7 @@ public class SNZScene : SKScene {
                     self.focusedWidget!.trigger("tap")
                     
                     handled = true
+                    break
                 }
             }
             
@@ -123,7 +127,5 @@ public class SNZScene : SKScene {
         return handled
     }
     
-    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.widgetTouchesEnded(touches, withEvent: event)
-    }
+    
 }
