@@ -3,7 +3,7 @@
 //  Delve
 //
 //  Created by Josh McKee on 11/13/15.
-//  Copyright © 2015 Neil North. All rights reserved.
+//  Copyright © 2016 Josh McKee. All rights reserved.
 //
 
 import Foundation
