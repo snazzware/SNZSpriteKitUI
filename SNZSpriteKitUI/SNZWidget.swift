@@ -13,7 +13,9 @@ import GameplayKit
 public typealias SNZEventHandler = () -> ()
 
 public class SNZWidget : UIResponder {
-
+    // Dictionary of events
+    public var events = [String: [String: SNZEventHandler]]()
+    
     public var parentNode: SKNode?
     public var sprite: SKNode?
     
@@ -43,8 +45,6 @@ public class SNZWidget : UIResponder {
         }
     }
     
-    public var events = [String: [SNZEventHandler]]()
-    
     public convenience init(parentNode: SKNode) {        
         self.init()
         
@@ -55,16 +55,41 @@ public class SNZWidget : UIResponder {
         super.init()
     }
     
-    public func bind(event: String, _ handler: ()->()) {
-        if (self.events[event] == nil) {
-            self.events[event] = [SNZEventHandler]()
-        }
-        self.events[event]!.append(handler)
+    /**
+        Bind a handler to a named event
+    */
+    public func bind(event: String, _ handler: SNZEventHandler) {
+        self.bind(event, handler, forKey: NSUUID().UUIDString)
+        
     }
     
+    /**
+        Bind a handler to a named event with a given key
+    */
+    public func bind(event: String, _ handler: SNZEventHandler, forKey: String) {
+        if (self.events[event] == nil) {
+            self.events[event] = [String: SNZEventHandler]()
+        }
+        self.events[event]![forKey] = handler
+    }
+    
+    /**
+        Unbinds a handler from a named event for a given key, or all handlers for the named event if no key is specified.
+    */
+    public func unbind(event: String, _ key: String? = nil) {
+        if (key == nil) {
+            self.events[event]?.removeAll()
+        } else {
+            self.events[event]?.removeValueForKey(key!)
+        }
+    }
+    
+    /**
+        Trigger handler(s) for a named event.
+    */
     public func trigger(event: String) {
         if (self.events[event] != nil) {
-            for handler in self.events[event]! {
+            for (_, handler) in self.events[event]! {
                 handler()
             }
         }
