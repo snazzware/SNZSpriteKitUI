@@ -1,6 +1,6 @@
 //
 //  SNZDialog.swift
-//  Delve
+//  SNZSpriteKitUI
 //
 //  Created by Josh McKee on 11/13/15.
 //  Copyright © 2016 Josh McKee. All rights reserved.
@@ -60,7 +60,6 @@ public class SNZWidget : UIResponder {
     */
     public func bind(event: String, _ handler: SNZEventHandler) {
         self.bind(event, handler, forKey: NSUUID().UUIDString)
-        
     }
     
     /**
