@@ -33,8 +33,8 @@ public class SNZCheckButtonWidget : SNZButtonWidget {
         self.size = CGSizeMake(248, 48)
     }
     
-    override public func show() {
-        super.show()
+    override public func render() {
+        super.render()
         
         self.labelSprite!.horizontalAlignmentMode = .Left
         self.labelSprite!.position.x = 60

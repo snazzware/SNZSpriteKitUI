@@ -40,7 +40,7 @@ public class SNZButtonWidget : SNZWidget {
         self.size = CGSizeMake(200, 48)
     }
     
-    public override func show() {
+    public override func render() {
         
         self.labelSprite = SKLabelNode(fontNamed: "Avenir-Black")
         self.labelSprite!.text = self.caption
@@ -80,7 +80,7 @@ public class SNZButtonWidget : SNZWidget {
             self.labelSprite?.fontColor = self.color
         });
         
-        super.show()
+        super.render()
     }
 
 }

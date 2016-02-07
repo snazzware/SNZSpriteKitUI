@@ -94,7 +94,7 @@ public class SNZWidget : UIResponder {
         }
     }
     
-    public func show() {
+    public func render() {
         if (self.sprite != nil) {
             self.parentNode?.addChild(self.sprite!)
         }

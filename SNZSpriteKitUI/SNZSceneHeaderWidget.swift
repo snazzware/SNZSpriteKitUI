@@ -16,8 +16,8 @@ public class SNZSceneHeaderWidget: SNZLabelWidget {
         self.anchorPoint = CGPointMake(0.5,1.0)
     }
 
-    override public func show() {
-        super.show()
+    override public func render() {
+        super.render()
     }
 
 }

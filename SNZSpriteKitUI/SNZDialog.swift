@@ -36,7 +36,7 @@ class SNZDialog : SNZWidget {
         self.addWidget(closeButton)
     }
     
-    override func show() {
+    override func render() {
         self.sprite = SKSpriteNode(color: UIColor.darkGrayColor(), size:self.size)
         
         self.sprite?.position = self.position
@@ -44,16 +44,16 @@ class SNZDialog : SNZWidget {
         
         self.initWidgets()
         
-        super.show()
+        super.render()
     }
     
     func open() {
         SNZUIDelegate.instance.focus(self)
         
-        self.show();
+        self.render();
         
         for widget in self.widgets {
-            widget.show()
+            widget.render()
         }
         
         self.trigger("open")

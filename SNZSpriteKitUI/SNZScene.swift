@@ -21,9 +21,9 @@ public class SNZScene : SKScene {
         }
     }
     
-    public func initWidgets() {
+    public func renderWidgets() {
         for widget in self.widgets {
-            widget.show()
+            widget.render()
         }
     }
     

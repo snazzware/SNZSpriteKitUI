@@ -24,7 +24,7 @@ public class SNZLabelWidget : SNZWidget {
         self.size = CGSizeMake(200, 48)
     }
     
-    override public func show() {
+    override public func render() {
         self.labelSprite = SKLabelNode(fontNamed: "Avenir-Black")
         self.labelSprite!.text = self.caption
         self.labelSprite!.fontColor = self.color
@@ -46,7 +46,7 @@ public class SNZLabelWidget : SNZWidget {
         
         self.sprite = frameSprite
         
-        super.show()
+        super.render()
     }    
 
 }
