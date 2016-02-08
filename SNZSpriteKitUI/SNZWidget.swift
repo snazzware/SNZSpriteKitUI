@@ -109,7 +109,7 @@ public class SNZWidget : UIResponder {
     }
     
     /**
-        Calculates new position for the widget's sprite, based on anchorPoint, relative to parent container and respecting current theme margins
+        Calculates position for the widget's sprite, based on anchorPoint, relative to parent container and respecting current theme margins
     */
     public func anchor() {
         if (self._anchorPoint == nil || self.parentNode == nil || self.sprite == nil || self.sprite!.scene == nil || self.sprite!.scene!.view == nil) {
@@ -127,6 +127,7 @@ public class SNZWidget : UIResponder {
         var x = self.position.x
         var y = self.position.y
         
+        // Determine horizontal position
         if (self._anchorPoint!.x == 1) { // right-align
             x = (width * self._anchorPoint!.x) - self.size.width - SNZSpriteKitUITheme.instance.uiOuterMargins.right
         } else
@@ -136,6 +137,7 @@ public class SNZWidget : UIResponder {
             x = (width * self._anchorPoint!.x) - (self.size.width/2)
         }
         
+        // Determine vertical position
         if (self._anchorPoint!.y == 1) { // top-align
             y = (height * self._anchorPoint!.y) - self.size.height - SNZSpriteKitUITheme.instance.uiOuterMargins.top
         } else
