@@ -27,10 +27,17 @@ public class SNZCheckButtonWidget : SNZButtonWidget {
     public var checkedTexture: SKTexture?
     public var uncheckedTexture: SKTexture?
     
+    
+    
     public override init() {
         super.init()
         
         self.size = CGSizeMake(248, 48)
+        
+        //self.checkedTexture = SKTextureAtlas.textureNamed(<#T##SKTextureAtlas#>)
+        
+        self.checkedTexture = SNZSpriteKitUITheme.instance.textures.textureNamed("checkboxChecked")
+        self.uncheckedTexture = SNZSpriteKitUITheme.instance.textures.textureNamed("checkboxUnchecked")
     }
     
     override public func render() {
