@@ -34,7 +34,7 @@ public class SNZButtonWidget : SNZWidget {
         }
     }
     
-    override public init() {
+    public override init() {
         super.init()
         
         self.size = CGSizeMake(200, 48)
@@ -81,6 +81,13 @@ public class SNZButtonWidget : SNZWidget {
         });
         
         super.render()
+    }
+    
+    public override func sizeDidChange() {
+        if (self.sprite != nil) {
+            (self.sprite as! SKShapeNode).path = CGPathCreateWithRoundedRect(CGRectMake(0, 0, self.size.width, self.size.height), self.cornerRadius, self.cornerRadius, nil)
+            self.labelSprite!.position = CGPointMake(((self.size.width) / 2), ((self.size.height) / 2))
+        }
     }
 
 }
