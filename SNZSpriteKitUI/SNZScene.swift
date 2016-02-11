@@ -14,6 +14,40 @@ public class SNZScene : SKScene {
     public var widgets = [SNZWidget]()
     public var focusedWidget: SNZWidget?
     
+    var panRecognizer:UIPanGestureRecognizer?
+    
+    public override func didMoveToView(view: SKView) {
+        super.didMoveToView(view)
+        
+        // Create pan gesture recognizer
+        if (self.panRecognizer == nil) {
+            self.panRecognizer = UIPanGestureRecognizer(target: self, action: "panGesture:")
+            
+            // Don't cancel touches in view, so we can still get touchesMoved events
+            self.panRecognizer!.cancelsTouchesInView = false
+        }
+        
+        // Add gesture recognizers to view
+        if (self.panRecognizer != nil) {
+            view.addGestureRecognizer(self.panRecognizer!)
+        }
+    }
+    
+    public override func willMoveFromView(view: SKView) {
+        super.willMoveFromView(view)
+        
+        // Remove gesture recogniers from view
+        if (self.panRecognizer != nil) {
+            view.removeGestureRecognizer(self.panRecognizer!)
+        }
+    }
+    
+    public func panGesture(sender: UIPanGestureRecognizer) {
+        if (self.focusedWidget != nil && self.focusedWidget!.wantsPanGestures) {
+            self.focusedWidget!.panGesture(sender)
+        }
+    }
+    
     public func addWidget(widget: SNZWidget) {
         self.widgets.append(widget)
         if (widget.parentNode == nil) {
@@ -40,14 +74,20 @@ public class SNZScene : SKScene {
     }
     
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        
         self.widgetTouchesBegan(touches, withEvent: event)
     }
     
     override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesMoved(touches, withEvent: event)
+        
         self.widgetTouchesMoved(touches, withEvent: event)
     }
     
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
+    
         self.widgetTouchesEnded(touches, withEvent: event)
     }
     
@@ -56,29 +96,32 @@ public class SNZScene : SKScene {
         
         for touch in touches {
             let location = touch.locationInNode(self)
-            var touchedNode = self.nodeAtPoint(location)
             
-            // determine actual sprite we should consider touched
-            while (touchedNode.ignoreTouches && touchedNode.parent != nil) {
-                touchedNode = touchedNode.parent!
-            }
+            for touchedNode in self.nodesAtPoint(touch.locationInNode(self)) {
+                var deeperTouch = touchedNode
             
-            // see if the sprite belongs to any of our widgets
-            for widget in self.widgets {
-                if (widget.sprite != nil && widget.sprite == touchedNode) {
-                    if (self.focusedWidget != nil) {
-                        if (self.focusedWidget!.sprite != touchedNode) {
-                            self.focusedWidget!.trigger("blur")
+                // determine actual sprite we should consider touched
+                while (deeperTouch.ignoreTouches && deeperTouch.parent != nil) {
+                    deeperTouch = deeperTouch.parent!
+                }
+                
+                // see if the sprite belongs to any of our widgets
+                for widget in self.widgets {
+                    if (widget.touchableSprite != nil && widget.touchableSprite == deeperTouch) {
+                        if (self.focusedWidget != nil) {
+                            if (self.focusedWidget!.touchableSprite != deeperTouch) {
+                                self.focusedWidget!.trigger("blur")
+                                widget.trigger("focus")
+                                self.focusedWidget = widget
+                            }
+                        } else {
                             widget.trigger("focus")
                             self.focusedWidget = widget
                         }
-                    } else {
-                        widget.trigger("focus")
-                        self.focusedWidget = widget
+                        
+                        handled = true
+                        break
                     }
-                    
-                    handled = true
-                    break
                 }
             }
         }
@@ -104,20 +147,21 @@ public class SNZScene : SKScene {
             self.focusedWidget!.trigger("blur")
         
             for touch in touches {
-                let location = touch.locationInNode(self)
-                var touchedNode = self.nodeAtPoint(location)
+                for touchedNode in self.nodesAtPoint(touch.locationInNode(self)) {
+                    var deeperTouch = touchedNode
                 
-                // determine actual sprite we should consider touched
-                while (touchedNode.ignoreTouches && touchedNode.parent != nil) {
-                    touchedNode = touchedNode.parent!
-                }
-                
-                // is the sprite the same one we started touching in touchesBegan?
-                if (self.focusedWidget!.sprite == touchedNode) {
-                    self.focusedWidget!.trigger("tap")
+                    // determine actual sprite we should consider touched
+                    while (deeperTouch.ignoreTouches && deeperTouch.parent != nil) {
+                        deeperTouch = deeperTouch.parent!
+                    }
                     
-                    handled = true
-                    break
+                    // is the sprite the same one we started touching in touchesBegan?
+                    if (self.focusedWidget!.sprite == deeperTouch) {
+                        self.focusedWidget!.trigger("tap")
+                        
+                        handled = true
+                        break
+                    }
                 }
             }
             
