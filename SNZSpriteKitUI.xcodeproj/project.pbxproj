@@ -18,6 +18,11 @@
 		806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC661C5C1E3400C10664 /* SNZWidget.swift */; };
 		806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */; };
 		806CDC751C5D394500C10664 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 806CDC741C5D394500C10664 /* LICENSE */; };
+		8075D1231C690E8A003DC454 /* SNZScrollableFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075D1221C690E8A003DC454 /* SNZScrollableFrame.swift */; };
+		8075D13A1C6A59FA003DC454 /* SNZTextureButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075D1391C6A59FA003DC454 /* SNZTextureButtonWidget.swift */; };
+		8094BB701C6820AC000D6663 /* checkboxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8094BB6E1C6820AC000D6663 /* checkboxChecked@2x.png */; };
+		8094BB711C6820AC000D6663 /* checkboxUnchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8094BB6F1C6820AC000D6663 /* checkboxUnchecked@2x.png */; };
+		8094BB731C682105000D6663 /* SNZSpriteKitUIGraphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8094BB721C682105000D6663 /* SNZSpriteKitUIGraphics.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		806CDC661C5C1E3400C10664 /* SNZWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZWidget.swift; sourceTree = "<group>"; };
 		806CDC6C1C5C1FAE00C10664 /* SNZScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZScene.swift; sourceTree = "<group>"; };
 		806CDC741C5D394500C10664 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8075D1221C690E8A003DC454 /* SNZScrollableFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZScrollableFrame.swift; sourceTree = "<group>"; };
+		8075D1391C6A59FA003DC454 /* SNZTextureButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZTextureButtonWidget.swift; sourceTree = "<group>"; };
+		8094BB6E1C6820AC000D6663 /* checkboxChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkboxChecked@2x.png"; path = "SNZSpriteKitUIGraphics.atlas/checkboxChecked@2x.png"; sourceTree = "<group>"; };
+		8094BB6F1C6820AC000D6663 /* checkboxUnchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkboxUnchecked@2x.png"; path = "SNZSpriteKitUIGraphics.atlas/checkboxUnchecked@2x.png"; sourceTree = "<group>"; };
+		8094BB721C682105000D6663 /* SNZSpriteKitUIGraphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SNZSpriteKitUIGraphics.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,8 @@
 		806CDC591C5C1E0100C10664 /* SNZSpriteKitUI */ = {
 			isa = PBXGroup;
 			children = (
+				8094BB721C682105000D6663 /* SNZSpriteKitUIGraphics.atlas */,
+				8094BB6D1C6820A2000D6663 /* Assets */,
 				806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */,
 				806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */,
 				806CDC631C5C1E3400C10664 /* SNZDialog.swift */,
@@ -78,8 +90,19 @@
 				806CDC5C1C5C1E0100C10664 /* Info.plist */,
 				806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */,
 				806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */,
+				8075D1221C690E8A003DC454 /* SNZScrollableFrame.swift */,
+				8075D1391C6A59FA003DC454 /* SNZTextureButtonWidget.swift */,
 			);
 			path = SNZSpriteKitUI;
+			sourceTree = "<group>";
+		};
+		8094BB6D1C6820A2000D6663 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8094BB6E1C6820AC000D6663 /* checkboxChecked@2x.png */,
+				8094BB6F1C6820AC000D6663 /* checkboxUnchecked@2x.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +174,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8094BB731C682105000D6663 /* SNZSpriteKitUIGraphics.atlas in Resources */,
+				8094BB701C6820AC000D6663 /* checkboxChecked@2x.png in Resources */,
 				806CDC751C5D394500C10664 /* LICENSE in Resources */,
+				8094BB711C6820AC000D6663 /* checkboxUnchecked@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +190,14 @@
 			files = (
 				806CDC691C5C1E3400C10664 /* SNZLabelWidget.swift in Sources */,
 				806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */,
+				8075D13A1C6A59FA003DC454 /* SNZTextureButtonWidget.swift in Sources */,
 				806B00141C62660100CF4652 /* SNZCheckButtonWidget.swift in Sources */,
 				806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */,
 				806B002B1C65465400CF4652 /* SNZSceneHeaderWidget.swift in Sources */,
 				806CDC671C5C1E3400C10664 /* SNZButtonWidget.swift in Sources */,
 				806CDC6A1C5C1E3400C10664 /* SNZUIDelegate.swift in Sources */,
 				806CDC681C5C1E3400C10664 /* SNZDialog.swift in Sources */,
+				8075D1231C690E8A003DC454 /* SNZScrollableFrame.swift in Sources */,
 				806B00291C65430500CF4652 /* SNZSpriteKitUITheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +226,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -246,6 +275,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -274,6 +304,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = SNZSpriteKitUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -292,6 +323,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = SNZSpriteKitUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
