@@ -19,9 +19,31 @@ public class SNZWidget : UIResponder {
     public var parentNode: SKNode?
     public var sprite: SKNode?
     
+    private var _touchableSprite: SKNode?
+    public var touchableSprite: SKNode? {
+        get {
+            return self._touchableSprite == nil ? self.sprite : self._touchableSprite
+        }
+        set {
+            self._touchableSprite = newValue
+        }
+    }
+    
     public var name: String = "Untitled"
     
-    public var size: CGSize = CGSizeMake(500,200)
+    public var wantsPanGestures = false
+    
+    private var _size: CGSize = CGSizeMake(500,200)
+    public var size: CGSize {
+        get {
+            return self._size
+        }
+        set {
+            self._size = newValue
+            self.sizeDidChange()
+        }
+    }
+    
     private var _position: CGPoint = CGPointMake(100,100)
     public var position: CGPoint {
         get {
@@ -94,6 +116,10 @@ public class SNZWidget : UIResponder {
         }
     }
     
+    public func sizeDidChange() {
+        
+    }
+    
     public func render() {
         if (self.sprite != nil) {
             self.parentNode?.addChild(self.sprite!)
@@ -148,6 +174,14 @@ public class SNZWidget : UIResponder {
         }
         
         self.position = CGPointMake(x,y)
+    }
+    
+    public func panGesture(sender: UIPanGestureRecognizer) {
+        let translation = sender.translationInView(sender.view!)
+        
+        print(translation)
+        
+        //sender.setTranslation(CGPointZero, inView: sender.view!)
     }
     
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
