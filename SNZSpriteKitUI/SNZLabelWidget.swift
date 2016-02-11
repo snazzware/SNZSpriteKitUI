@@ -35,11 +35,15 @@ public class SNZLabelWidget : SNZWidget {
         self.labelSprite!.ignoreTouches = true
         
         // Automatically resize
-        let frameRect = CGRectMake(0, 0, self.labelSprite!.frame.size.width + SNZSpriteKitUITheme.instance.uiInnerMargins.horizontal, self.labelSprite!.frame.size.height + SNZSpriteKitUITheme.instance.uiInnerMargins.vertical)
+        self.size.width = self.labelSprite!.frame.size.width + SNZSpriteKitUITheme.instance.uiInnerMargins.horizontal
+        self.size.height = self.labelSprite!.frame.size.height + SNZSpriteKitUITheme.instance.uiInnerMargins.vertical
+        
+        let frameRect = CGRectMake(0, 0, self.size.width, self.size.height)
         
         let frameSprite = SKShapeNode(rect: frameRect)
         frameSprite.fillColor = self.backgroundColor
         frameSprite.position = self.position
+        frameSprite.lineWidth = 0
         frameSprite.ignoreTouches = true
     
         frameSprite.addChild(self.labelSprite!)
