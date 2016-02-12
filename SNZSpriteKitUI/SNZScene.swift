@@ -95,8 +95,6 @@ public class SNZScene : SKScene {
         var handled = false
         
         for touch in touches {
-            let location = touch.locationInNode(self)
-            
             for touchedNode in self.nodesAtPoint(touch.locationInNode(self)) {
                 var deeperTouch = touchedNode
             
