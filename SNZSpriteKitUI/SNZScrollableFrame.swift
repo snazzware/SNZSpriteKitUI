@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-public class SNZScrollableFrame: SNZWidget {
+public class SNZScrollableFrame: SNZFrame {
     
     public var content = SKNode()
     

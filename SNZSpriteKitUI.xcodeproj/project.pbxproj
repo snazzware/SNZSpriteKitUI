@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		804A168F1C7A5D3B005BBB79 /* SNZFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804A168E1C7A5D3B005BBB79 /* SNZFrame.swift */; };
 		806B00141C62660100CF4652 /* SNZCheckButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */; };
 		806B00291C65430500CF4652 /* SNZSpriteKitUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */; };
 		806B002B1C65465400CF4652 /* SNZSceneHeaderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		804A168E1C7A5D3B005BBB79 /* SNZFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZFrame.swift; sourceTree = "<group>"; };
 		806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZCheckButtonWidget.swift; sourceTree = "<group>"; };
 		806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZSpriteKitUITheme.swift; sourceTree = "<group>"; };
 		806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZSceneHeaderWidget.swift; sourceTree = "<group>"; };
@@ -90,8 +92,9 @@
 				806CDC5C1C5C1E0100C10664 /* Info.plist */,
 				806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */,
 				806B002A1C65465400CF4652 /* SNZSceneHeaderWidget.swift */,
-				8075D1221C690E8A003DC454 /* SNZScrollableFrame.swift */,
 				8075D1391C6A59FA003DC454 /* SNZTextureButtonWidget.swift */,
+				8075D1221C690E8A003DC454 /* SNZScrollableFrame.swift */,
+				804A168E1C7A5D3B005BBB79 /* SNZFrame.swift */,
 			);
 			path = SNZSpriteKitUI;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				806CDC691C5C1E3400C10664 /* SNZLabelWidget.swift in Sources */,
 				806CDC6B1C5C1E3400C10664 /* SNZWidget.swift in Sources */,
 				8075D13A1C6A59FA003DC454 /* SNZTextureButtonWidget.swift in Sources */,
+				804A168F1C7A5D3B005BBB79 /* SNZFrame.swift in Sources */,
 				806B00141C62660100CF4652 /* SNZCheckButtonWidget.swift in Sources */,
 				806CDC6D1C5C1FAE00C10664 /* SNZScene.swift in Sources */,
 				806B002B1C65465400CF4652 /* SNZSceneHeaderWidget.swift in Sources */,
