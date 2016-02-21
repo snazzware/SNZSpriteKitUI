@@ -27,8 +27,6 @@ public class SNZCheckButtonWidget : SNZButtonWidget {
     public var checkedTexture: SKTexture?
     public var uncheckedTexture: SKTexture?
     
-    
-    
     public override init() {
         super.init()
         
