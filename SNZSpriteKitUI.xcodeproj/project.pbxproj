@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		804759A51CA081580026F25E /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 804759A41CA081580026F25E /* .travis.yml */; };
 		804A168F1C7A5D3B005BBB79 /* SNZFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804A168E1C7A5D3B005BBB79 /* SNZFrame.swift */; };
 		806B00141C62660100CF4652 /* SNZCheckButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */; };
 		806B00291C65430500CF4652 /* SNZSpriteKitUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		804759A41CA081580026F25E /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		804A168E1C7A5D3B005BBB79 /* SNZFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZFrame.swift; sourceTree = "<group>"; };
 		806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZCheckButtonWidget.swift; sourceTree = "<group>"; };
 		806B00281C65430500CF4652 /* SNZSpriteKitUITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZSpriteKitUITheme.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		806CDC4D1C5C1E0100C10664 = {
 			isa = PBXGroup;
 			children = (
+				804759A41CA081580026F25E /* .travis.yml */,
 				806CDC741C5D394500C10664 /* LICENSE */,
 				806CDC591C5C1E0100C10664 /* SNZSpriteKitUI */,
 				806CDC581C5C1E0100C10664 /* Products */,
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804759A51CA081580026F25E /* .travis.yml in Resources */,
 				8094BB731C682105000D6663 /* SNZSpriteKitUIGraphics.atlas in Resources */,
 				8094BB701C6820AC000D6663 /* checkboxChecked@2x.png in Resources */,
 				806CDC751C5D394500C10664 /* LICENSE in Resources */,
