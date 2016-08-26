@@ -21,7 +21,7 @@ public class SNZScene : SKScene {
         
         // Create pan gesture recognizer
         if (self.panRecognizer == nil) {
-            self.panRecognizer = UIPanGestureRecognizer(target: self, action: "panGesture:")
+            self.panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(SNZScene.panGesture(_:)))
             
             // Don't cancel touches in view, so we can still get touchesMoved events
             self.panRecognizer!.cancelsTouchesInView = false
