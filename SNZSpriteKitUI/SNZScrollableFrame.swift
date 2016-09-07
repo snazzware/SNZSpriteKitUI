@@ -104,7 +104,8 @@ public class SNZScrollableFrame: SNZFrame {
         self.content.ignoreTouches = true
 
         let mask = SKShapeNode(rect: frameRect)
-        mask.fillColor = UIColor.whiteColor()
+        mask.fillColor = self.backgroundColor
+        mask.strokeColor = self.strokeColor
         mask.name = "mask"
 
         cropNode.name = "cropNode"
