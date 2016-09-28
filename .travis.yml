@@ -4,4 +4,4 @@ before_install:
 - gem install xcpretty
 script:
     - set -o pipefail
-    - xcodebuild -project SNZSpriteKitUI.xcodeproj -scheme SNZSpriteKitUI -sdk iphonesimulator10.0 -destination 'name=iPhone 6' test | xcpretty
+    - xcodebuild -project SNZSpriteKitUI.xcodeproj -scheme SNZSpriteKitUI -sdk iphonesimulator10.0 -destination 'name=iPhone 6' | xcpretty
