@@ -10,9 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-public typealias SNZEventHandler = () -> ()
-
-open class SNZWidget : UIResponder {
+open class SNZWidget : SNZEventReceiver {
     // Dictionary of events
     open var events = [String: [String: SNZEventHandler]]()
     
