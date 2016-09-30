@@ -25,6 +25,7 @@
 		8094BB701C6820AC000D6663 /* checkboxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8094BB6E1C6820AC000D6663 /* checkboxChecked@2x.png */; };
 		8094BB711C6820AC000D6663 /* checkboxUnchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8094BB6F1C6820AC000D6663 /* checkboxUnchecked@2x.png */; };
 		8094BB731C682105000D6663 /* SNZSpriteKitUIGraphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8094BB721C682105000D6663 /* SNZSpriteKitUIGraphics.atlas */; };
+		80EE6AEA1D9E151000F5160F /* SNZEventReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EE6AE91D9E151000F5160F /* SNZEventReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		8094BB6E1C6820AC000D6663 /* checkboxChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkboxChecked@2x.png"; path = "SNZSpriteKitUIGraphics.atlas/checkboxChecked@2x.png"; sourceTree = "<group>"; };
 		8094BB6F1C6820AC000D6663 /* checkboxUnchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkboxUnchecked@2x.png"; path = "SNZSpriteKitUIGraphics.atlas/checkboxUnchecked@2x.png"; sourceTree = "<group>"; };
 		8094BB721C682105000D6663 /* SNZSpriteKitUIGraphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SNZSpriteKitUIGraphics.atlas; sourceTree = "<group>"; };
+		80EE6AE91D9E151000F5160F /* SNZEventReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNZEventReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				8094BB721C682105000D6663 /* SNZSpriteKitUIGraphics.atlas */,
 				8094BB6D1C6820A2000D6663 /* Assets */,
 				806B00131C62660100CF4652 /* SNZCheckButtonWidget.swift */,
+				80EE6AE91D9E151000F5160F /* SNZEventReceiver.swift */,
 				806CDC621C5C1E3400C10664 /* SNZButtonWidget.swift */,
 				806CDC631C5C1E3400C10664 /* SNZDialog.swift */,
 				806CDC641C5C1E3400C10664 /* SNZLabelWidget.swift */,
@@ -205,6 +208,7 @@
 				806B002B1C65465400CF4652 /* SNZSceneHeaderWidget.swift in Sources */,
 				806CDC671C5C1E3400C10664 /* SNZButtonWidget.swift in Sources */,
 				806CDC6A1C5C1E3400C10664 /* SNZUIDelegate.swift in Sources */,
+				80EE6AEA1D9E151000F5160F /* SNZEventReceiver.swift in Sources */,
 				806CDC681C5C1E3400C10664 /* SNZDialog.swift in Sources */,
 				8075D1231C690E8A003DC454 /* SNZScrollableFrame.swift in Sources */,
 				806B00291C65430500CF4652 /* SNZSpriteKitUITheme.swift in Sources */,
